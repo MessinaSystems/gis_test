@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaflet Map Example</title>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    /* Set the size of the map container */
+    #map {
+      height: 100vh; /* Full height of the browser window */
+      width: 100%; /* Full width of the browser window */
+    }
+  </style>
+</head>
+<body>
+  <!-- Map container -->
+  <div id="map"></div>
+
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // Initialize the map and set its view to a specific location
+    const map = L.map('map').setView([51.505, -0.09], 13); // Coordinates are for London
+
+    // Add a basemap layer (OpenStreetMap in this case)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Add a marker at a specific location
+    const marker = L.marker([51.505, -0.09]).addTo(map);
+
+    // Bind a popup to the marker
+    marker.bindPopup("<b>Hello, world!</b><br>This is a Leaflet map.").openPopup();
+
+    // Add a circle overlay
+    const circle = L.circle([51.508, -0.11], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 500
+    }).addTo(map);
+
+    // Add a polygon overlay
+    const polygon = L.polygon([
+      [51.509, -0.08],
+      [51.503, -0.06],
+      [51.51, -0.047]
+    ]).addTo(map);
+
+    // Add a popup to the polygon
+    polygon.bindPopup("I am a polygon.");
+  </script>
+</body>
+</html>
