@@ -31,11 +31,11 @@
     }).addTo(map);
 
     // Load GeoJSON data and add it to the map
-    //fetch('LGA.geojson')
-    //  .then(response => response.json())
-    //  .then(data => {
-    //    L.geoJSON(data).addTo(map);
-    //  });
+    fetch('LGA.geojson')
+      .then(response => response.json())
+      .then(data => {
+        L.geoJSON(data).addTo(map);
+      });
 
     // Add a marker at a specific location
     const marker = L.marker([-37.8136, 144.9631]).addTo(map);
