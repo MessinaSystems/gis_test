@@ -22,7 +22,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     // Initialize the map and set its view to a specific location
-    const map = L.map('map').setView([51.505, -0.09], 13); // Coordinates are for London
+    const map = L.map('map').setView([-37.8136, 144.9631], 13);
 
     // Add a basemap layer (OpenStreetMap in this case)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -30,14 +30,21 @@
       attribution: '© OpenStreetMap contributors'
     }).addTo(map);
 
+    // Load GeoJSON data and add it to the map
+    //fetch('LGA.geojson')
+    //  .then(response => response.json())
+    //  .then(data => {
+    //    L.geoJSON(data).addTo(map);
+    //  });
+
     // Add a marker at a specific location
-    const marker = L.marker([51.505, -0.09]).addTo(map);
+    const marker = L.marker([-37.8136, 144.9631]).addTo(map);
 
     // Bind a popup to the marker
     marker.bindPopup("<b>Hello, world!</b><br>This is a Leaflet map.").openPopup();
 
     // Add a circle overlay
-    const circle = L.circle([51.508, -0.11], {
+    const circle = L.circle([-37.815, 144.964], {
       color: 'red',
       fillColor: '#f03',
       fillOpacity: 0.5,
@@ -46,9 +53,9 @@
 
     // Add a polygon overlay
     const polygon = L.polygon([
-      [51.509, -0.08],
-      [51.503, -0.06],
-      [51.51, -0.047]
+      [-37.814, 144.964],
+      [-37.816, 144.962],
+      [-37.817, 144.958]
     ]).addTo(map);
 
     // Add a popup to the polygon
