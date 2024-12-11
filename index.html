@@ -31,7 +31,7 @@
     }).addTo(map);
 
     // Load GeoJSON data and add it to the map
-    fetch('https://github.com/MessinaSystems/gis_test/blob/5248c48e4e3d112c64aa44bff3740533a02cb0ce/LGA.geojson')
+    fetch('https://raw.githubusercontent.com/MessinaSystems/gis_test/5248c48e4e3d112c64aa44bff3740533a02cb0ce/LGA.geojson')
       .then(response => response.json())
       .then(data => {
         L.geoJSON(data).addTo(map);
