@@ -44,6 +44,7 @@
       const geojsonLayer = L.geoJSON(data).addTo(map);
       map.fitBounds(geojsonLayer.getBounds());  
     });
+    console.log("Data loaded and fitted!");
 
     // Add a marker at a specific location
     const marker = L.marker([-37.8136, 144.9631]).addTo(map);
