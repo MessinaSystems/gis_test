@@ -23,7 +23,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
     // Initialize the map and set its view to a specific location
-    const map = L.map('map').setView([-37.8136, 144.9631], 13);
+    const map = L.map('map', {crs: L.CRS.EPSG4326}).setView([-37.8136, 144.9631], 13);
 
     // Add a basemap layer (OpenStreetMap in this case)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -44,7 +44,7 @@
       const geojsonLayer = L.geoJSON(data).addTo(map);
       map.fitBounds(geojsonLayer.getBounds());  
     });
-    console.log("Data loaded and fitted!");
+    console.log("Data loaded and fitted2!");
 
     // Add a marker at a specific location
     const marker = L.marker([-37.8136, 144.9631]).addTo(map);
