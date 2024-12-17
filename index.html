@@ -32,19 +32,19 @@
     }).addTo(map);
 
     // Load GeoJSON data and add it to the map
-    /*fetch('https://raw.githubusercontent.com/MessinaSystems/gis_test/5248c48e4e3d112c64aa44bff3740533a02cb0ce/LGA.geojson')
+    fetch('https://raw.githubusercontent.com/MessinaSystems/gis_test/5248c48e4e3d112c64aa44bff3740533a02cb0ce/LGA.geojson')
       .then(response => response.json())
       .then(data => {
         L.geoJSON(data).addTo(map);
-      });*/
+      });
 
-    fetch('https://raw.githubusercontent.com/MessinaSystems/gis_test/5248c48e4e3d112c64aa44bff3740533a02cb0ce/LGA.geojson')
+    /*fetch('https://raw.githubusercontent.com/MessinaSystems/gis_test/5248c48e4e3d112c64aa44bff3740533a02cb0ce/LGA.geojson')
       .then(response => response.json())
       .then(data => {
       const geojsonLayer = L.geoJSON(data).addTo(map);
       map.fitBounds(geojsonLayer.getBounds());  
-    });
-    console.log("Data loaded and fitted2!");
+    });*/
+    console.log("Data loaded and fitted3!");
 
     // Add a marker at a specific location
     const marker = L.marker([-37.8136, 144.9631]).addTo(map);
